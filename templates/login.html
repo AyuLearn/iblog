@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block logina %}active{% endblock logina %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+<!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>login here</h4>
+                <h2>let's start your session!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+<!-- Banner Ends Here -->
+<div class="container my-4">
+<h2 class="text-center my-3"><u>Login Here</u></h2>
+<form action="/login" method="POST">
+  <div class="form-group">
+  {% csrf_token %}
+    <label for="loginusername">Username</label>
+    <input type="text" class="form-control" name="loginusername" id="loginusername" aria-describedby="loginusername" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="loginpass">Password</label>
+    <input type="password" class="form-control" name="loginpass" id="loginpass" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
